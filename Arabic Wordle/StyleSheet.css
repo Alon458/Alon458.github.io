@@ -128,7 +128,7 @@
     }
 
     .keyboard {
-        transform: scaleX(2);
+        transform: scaleX(1.6);
     }
 
     .keyboard-row-2 {
