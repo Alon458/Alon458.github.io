@@ -283,3 +283,8 @@ function copyResult() {
     console.log(score);
     navigator.clipboard.writeText(score);
 }
+
+for(int i = 0; i < wordList.length; i++) {
+    if(wordList[i].length == word.length)
+        document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + "<h1>" + wordList[i] + "</h1>;  
+}
