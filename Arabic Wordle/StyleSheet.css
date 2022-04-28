@@ -7,7 +7,7 @@
     body {
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
-        transform: scaleY(2);
+        transform: scaleY(1.6);
         transform-origin: top;
     }
 
@@ -15,7 +15,7 @@
         font-size: 5em;
         font-weight: bold;
         letter-spacing: 2px;
-        transform: scaleX(1.8);
+        transform: scaleX(1.4);
     }
 
     #board {
@@ -25,7 +25,7 @@
         margin-top: 3px;
         display: flex;
         flex-wrap: wrap;
-        transform: scaleX(2);
+        transform: scaleX(1.6);
     }
 
     .tile {
@@ -128,7 +128,7 @@
     }
 
     .keyboard {
-        transform: scaleX(4);
+        transform: scaleX(2);
     }
 
     .keyboard-row-2 {
