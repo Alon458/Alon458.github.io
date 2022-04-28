@@ -10,6 +10,10 @@
         transform: scaleY(1.6);
         transform-origin: top;
     }
+   
+    h2 {
+        font-size: 200%;
+    }
 
     #title {
         font-size: 5em;
