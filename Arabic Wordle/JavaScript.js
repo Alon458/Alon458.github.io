@@ -20,8 +20,8 @@ guessList = guessList.concat(wordList);
 
 //geting a random word
 let random = Math.floor(Math.random() * wordList.length);
-let word = wordList[number];
-let hebrewWord = translate[number];
+let word = wordList[random];
+let hebrewWord = translate[random];
 
 console.log(word);
 
