@@ -1,4 +1,4 @@
-﻿//max row and column
+//max row and column
 let height = 6;
 let width = 5;
 
@@ -87,6 +87,7 @@ function initialize() {
             keyboardRow.appendChild(keyTile);
         }
         document.body.appendChild(keyboardRow);
+
     }
     
 
@@ -95,6 +96,12 @@ function initialize() {
     document.addEventListener("keyup", (e) => {
         proccessInput(e);
     })
+
+    for (let i = 0; i < wordList.length; i++) {
+        if (wordList[i].length == word.length)
+            document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + "<h2>" + wordList[i] + "</h2>";
+    }
+
 }
 
 function processKey() {
@@ -282,9 +289,4 @@ function copyResult() {
     }
     console.log(score);
     navigator.clipboard.writeText(score);
-}
-
-for(let i = 0; i < wordList.length; i++) {
-    if(wordList[i].length == word.length)
-        document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + "<h1>" + wordList[i] + "</h1>";  
 }
