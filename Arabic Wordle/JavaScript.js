@@ -93,17 +93,23 @@ function initialize() {
         document.getElementById('keyboard').appendChild(keyboardRow);
 
     }
-    
+
 
     //when you lift the finger from a key, proccess the input
     //even though you only do this once, it will always "listen"(proccess input)
     document.addEventListener("keyup", (e) => {
         proccessInput(e);
     })
-
+    let first = true;
     for (let i = 0; i < wordList.length; i++) {
-        if (wordList[i].length == word.length)
-            document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + " " + wordList[i];
+        if (wordList[i].length == word.length) {
+            if (first) {
+                first = false;
+                document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + " " + wordList[i];
+            } else {
+                document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + ", " + wordList[i];
+            }
+        }
     }
 
 }
@@ -133,7 +139,7 @@ function proccessInput(e) {
                 currTile.classList.add("pop_anim");
             }
         }
-    //if it is not a letter, checking if it is the delete key
+        //if it is not a letter, checking if it is the delete key
     } else if (e.code == "Backspace") {
         //if it is checking that you have typed at least one letter and decreasing the current column
         if (col > 0 && col <= width) {
@@ -144,7 +150,7 @@ function proccessInput(e) {
         let currTile = document.getElementById(row.toString() + '-' + col.toString());
         currTile.innerText = "";
         currTile.classList.remove("pop_anim");
-    //if it is not the delete key, checking if it is the enter key(there are 2 enters on the keyboard)
+        //if it is not the delete key, checking if it is the enter key(there are 2 enters on the keyboard)
     } else if (e.code == "Enter" || e.code == "NumpadEnter") {
         //if the enter is pressed you want to go down a row(updating)
         update();
@@ -292,5 +298,5 @@ function copyResult() {
         score += "\n";
     }
     console.log(score);
-    navigator.clipboard.writeText(score);   
+    navigator.clipboard.writeText(score);
 }
