@@ -21,6 +21,10 @@
         letter-spacing: 2px;
         transform: scaleX(1.4);
     }
+   
+   #options {
+      transform: scaleX(1.6);
+   }
 
     #board {
         width: 345px;
