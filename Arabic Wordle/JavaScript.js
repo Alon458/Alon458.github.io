@@ -134,7 +134,7 @@ function proccessInput(e) {
             //also adding animation class(see css)
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
-                currTile.innerText = e.code;
+                currTile.innerText = "&zwj;" + e.code;
                 col += 1;
                 currTile.classList.add("pop_anim");
             }
