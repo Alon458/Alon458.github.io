@@ -99,7 +99,7 @@ function initialize() {
 
     for (let i = 0; i < wordList.length; i++) {
         if (wordList[i].length == word.length)
-            document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + "<h2>" + wordList[i] + "</h2>";
+            document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + " " + wordList[i];
     }
 
 }
