@@ -11,6 +11,7 @@ let gameOver = false;
 let guessList = words;
 
 let wordList = ["ارز", "ابن", "بدوي", "بني", "بين", "ترك", "توت", "ثلاث", "دفتر", "ذكي", "دار", "موز", "ملكة", "ملك", "ميلاد", "هاتف", "هنا", "نهر", "وردي", "والد", "يافا", "كتاب", "لبنان", "زيتون", "رفيقة", "دكتور", "تركيا", "تلميذ"]
+let translate = ["ארזים", "בן", "בדווי", "בנה", "בין", "עזב", "תות", "שלוש", "מחברת", "חכם", "בית", "בננות", "מלכה", "מלך", "מולד, הולדת", "טלפון", "כאן", "נהר", "ורוד", "הורה, אב", "יפו", "ספר", "לבנון", "זיתים", "חברה", "דוקטוד, רופא", "תורכיה", "תלמיד"];
 
 guessList = guessList.concat(wordList);
 
@@ -18,7 +19,10 @@ guessList = guessList.concat(wordList);
 guessList = guessList.concat(wordList);
 
 //geting a random word
-let word = wordList[Math.floor(Math.random() * wordList.length)];
+let random = Math.floor(Math.random() * wordList.length);
+let word = wordList[number];
+let hebrewWord = translate[number];
+
 console.log(word);
 
 width = word.length;
@@ -150,7 +154,7 @@ function proccessInput(e) {
     if (gameOver == false && row == height) {
         gameOver = true;
         //showing the word
-        document.getElementById("answer").innerText = word;
+        document.getElementById("answer").innerText = word + "-" + hebrewWord;
         copyResult();
     }
 }
@@ -267,7 +271,7 @@ function update() {
 }
 
 function win() {
-    document.getElementById("answer").innerText = "Correct!";
+    document.getElementById("answer").innerText = "נכון! המילה בעברית היא " + hebrewWord;
     copyResult();
 }
 
@@ -288,5 +292,5 @@ function copyResult() {
         score += "\n";
     }
     console.log(score);
-    navigator.clipboard.writeText(score);
+    navigator.clipboard.writeText(score);   
 }
