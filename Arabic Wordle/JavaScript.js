@@ -90,7 +90,7 @@ function initialize() {
             }
             keyboardRow.appendChild(keyTile);
         }
-        document.body.appendChild(keyboardRow);
+        document.getElementById('keyboard').appendChild(keyboardRow);
 
     }
     
