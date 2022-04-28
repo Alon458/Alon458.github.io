@@ -183,7 +183,7 @@ function update() {
         return;
     //checking if the word is invalid
     else if (!guessList.includes(guess)) {
-        document.getElementById("answer").innerText = "Not in word list";
+        document.getElementById("answer").innerText = "לא ברשימת המילים";
         //adding shake animation
         for (let i = 0; i < width; i++) {
             let currTile = document.getElementById(row.toString() + '-' + i.toString());
