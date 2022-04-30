@@ -1,7 +1,7 @@
 @media only screen and (min-width: 600px) {
     * {
         direction: rtl;
-        overflow: hidden;
+        overflow-x: hidden;
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
         -moz-user-select: none; /* Old versions of Firefox */
