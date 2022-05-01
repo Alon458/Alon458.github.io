@@ -15,6 +15,7 @@
         text-align: center;
         transform: scaleY(1.7);
         transform-origin: top;
+        touch-action: none;
     }
    
     h2 {
