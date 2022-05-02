@@ -33,7 +33,12 @@
         font-size: 300%;
         transform: scaleY(0.7);
     }
-
+   
+   #options span {
+        font-size: 300%;
+        transform: scaleY(0.7);
+    }
+   
     #board {
         width: 345px;
         height: 420px;
