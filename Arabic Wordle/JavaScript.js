@@ -47,7 +47,6 @@ function initialize() {
             //reseting the text
             tile.innerText = "";
             //adding to the board
-            document.getElementById("board").innerHTML += '&#x200d;' 
             document.getElementById("board").appendChild(tile);
         }
     }
@@ -135,7 +134,7 @@ function proccessInput(e) {
             //also adding animation class(see css)
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
-                currTile.innerHTML = "&#x200d;" + e.code + "&#x200d;";
+                currTile.innerHTML = e.code;
                 col += 1;
                 currTile.classList.add("pop_anim");
             }
