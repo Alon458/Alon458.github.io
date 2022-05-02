@@ -48,7 +48,7 @@ function initialize() {
             tile.innerText = "";
             //adding to the board
             document.getElementById("board").appendChild(tile);
-            document.getElementById("board") += '&#x200d;' 
+            document.getElementById("board").innerHTML += '&#x200d;' 
         }
     }
     document.getElementById("board").style.width = 69 * word.length + "px";
