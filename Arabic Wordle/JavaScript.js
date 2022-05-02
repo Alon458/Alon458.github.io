@@ -29,6 +29,15 @@ width = word.length;
 
 let letters = "يقهملهكتفنبثـذوازرد"
 
+let speech = new SpeechSynthesisUtterance();
+
+speech.lang = "ar";
+speech.volume = 1;
+speech.rate = 1;
+speech.pitch = 1;                
+
+
+
 //when the window loads, initialize
 window.onload = function () {
     initialize();
