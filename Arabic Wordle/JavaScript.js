@@ -36,7 +36,8 @@ speech.volume = 1;
 speech.rate = 1;
 speech.pitch = 1;                
 
-
+speech.text = word;
+window.speechSynthesis.speak(speech);
 
 //when the window loads, initialize
 window.onload = function () {
@@ -289,8 +290,6 @@ function update() {
 
 function win() {
     document.getElementById("answer").innerText = "נכון! המילה בעברית היא " + hebrewWord;
-    speech.text = word;
-    window.speechSynthesis.speak(speech);
     copyResult();
 }
 
