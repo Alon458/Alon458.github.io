@@ -107,15 +107,19 @@ function initialize() {
     document.addEventListener("keyup", (e) => {
         proccessInput(e);
     })
-    let first = true;
+
+    let first = true
+    let options = document.getElementById("options");
     for (let i = 0; i < wordList.length; i++) {
         if (wordList[i].length == word.length) {
-            if (first) {
+            if (!first)
+                options.innerHTML += ", ";
+            else
                 first = false;
-                document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + " " + wordList[i];
-            } else {
-                document.getElementById("options").innerHTML = document.getElementById("options").innerHTML + ", " + wordList[i];
-            }
+            let span = document.createElement("span");
+            span.innerHTML = wordList[i];
+            span.id = i;
+            options.appendChild(span);
         }
     }
 
@@ -169,6 +173,7 @@ function proccessInput(e) {
         //showing the word
         speech.text = word;
         window.speechSynthesis.speak(speech);
+        document.getElementById(random).style.color = "red";
         document.getElementById("answer").innerText = word + "-" + hebrewWord;
         copyResult();
     }
@@ -290,6 +295,7 @@ function win() {
     speech.text = word;
     window.speechSynthesis.speak(speech);
     copyResult();
+    document.getElementById(random).style.color = "green";
 }
 
 function copyResult() {
