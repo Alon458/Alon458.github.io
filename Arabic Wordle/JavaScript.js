@@ -169,6 +169,8 @@ function proccessInput(e) {
     if (gameOver == false && row == height) {
         gameOver = true;
         //showing the word
+        speech.text = word;
+        window.speechSynthesis.speak(speech);
         document.getElementById("answer").innerText = word + "-" + hebrewWord;
         copyResult();
     }
@@ -287,6 +289,8 @@ function update() {
 
 function win() {
     document.getElementById("answer").innerText = "נכון! המילה בעברית היא " + hebrewWord;
+    speech.text = word;
+    window.speechSynthesis.speak(speech);
     copyResult();
 }
 
