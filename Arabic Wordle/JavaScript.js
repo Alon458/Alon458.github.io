@@ -6,6 +6,8 @@ let width = 5;
 let row = 0;
 let col = 0;
 
+let hebrew = [];
+
 let gameOver = false;
 
 let guessList = words;
@@ -109,6 +111,10 @@ function initialize() {
     })
 
     let first = true
+    
+
+    let index = 0;
+    
     let options = document.getElementById("options");
     for (let i = 0; i < wordList.length; i++) {
         if (wordList[i].length == word.length) {
@@ -116,12 +122,22 @@ function initialize() {
                 options.innerHTML += ", ";
             else
                 first = false;
+            
             let span = document.createElement("span");
+
+            span.setAttribute("onclick", "showTranslate(" + index + ")");
+            span.setAttribute("data-type", "off");
+            span.setAttribute("word", wordList[i]);
+            
             span.innerHTML = wordList[i];
-            span.id = i;
+            hebrew.push(translate[i]);
+            span.id = index;
+            index++;
             options.appendChild(span);
         }
+
     }
+    console.log(hebrew);
 
 }
 
@@ -288,6 +304,18 @@ function update() {
 
     row += 1;
     col = 0;
+}
+
+function showTranslate(id) {
+    let span = document.getElementById(id);
+
+    if (span.getAttribute("data-type") == "off") {
+        span.innerHTML = hebrew[span.id];
+        span.setAttribute("data-type", "on");
+    } else {
+        span.innerHTML = span.getAttribute("word");
+        span.setAttribute("data-type", "off");        
+    }
 }
 
 function win() {
